@@ -1,5 +1,6 @@
 #include <iostream>
-
+#include <fstream>
+#include <string>
 //I know this shouldn't really be here but it makes coding a bit easier and faster
 using namespace std;
 
@@ -37,5 +38,22 @@ int main()
     cout << "Please input another number " <<endl;
     cin >> y;
     cout << "The first number to the power of the second number is "<< powerof(x,y)<<endl;
+    ofstream text;
+    text.open("text.txt");
+    text << "Wuss poppin B";
+    text.close();
+    ifstream itext;
+    itext.open("text.txt");
+    if (itext.is_open())
+    {
+        string line;
+        while (getline(itext, line))
+        {
+            cout << line <<endl;
+        }
+    }
+    itext.close();
+
+
     return 0;
 }
