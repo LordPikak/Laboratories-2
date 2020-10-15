@@ -4,19 +4,14 @@
 using namespace std;
 
 //I'm gonna use different functions for each task
-bool taskone()
+bool taskone(int x)
 {
-    int x;
-    cout << "Please inout an integer number: ";
-    cin >> x;
-    for (int i=2; i<x; i++)
+   for (int i=2; i<x; i++)
     {
         if (x%i==0)
         {
-            cout <<"Sorry, number's not prime m8";
             return false;
         }
-    cout << "Number's prime m8, goodon'ya";
     return true;
     }
 
@@ -25,6 +20,10 @@ bool taskone()
 
 int main()
 {
-
+    int x;
+    cout << "Please input an integer number: ";
+    cin >> x;
+    if (taskone(x)==true)cout << "Number's prime m8, goodon'ya";
+    else cout << "This number ain't prime m8, sorry";
     return 0;
 }
