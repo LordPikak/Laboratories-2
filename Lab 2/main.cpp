@@ -4,6 +4,15 @@
 using namespace std;
 
 //I'm gonna use different functions for each task
+int powerof(int x, int y)
+{
+    for(int i=0; i<=y; i++)
+    {
+        x*=x;
+        return x;
+    }
+    return 1;
+}
 bool taskone(int x)
 {
    for (int i=2; i<x; i++)
@@ -20,10 +29,13 @@ bool taskone(int x)
 
 int main()
 {
-    int x;
-    cout << "Please input an integer number: ";
+    int x,y;
+    cout << "Please input an integer number: " <<endl;
     cin >> x;
-    if (taskone(x)==true)cout << "Number's prime m8, goodon'ya";
-    else cout << "This number ain't prime m8, sorry";
+    if (taskone(x)==true)cout << "Number's prime m8, goodon'ya" <<endl;
+    else cout << "This number ain't prime m8, sorry" <<endl;
+    cout << "Please input another number " <<endl;
+    cin >> y;
+    cout << "The first number to the power of the second number is "<< powerof(x,y)<<endl;
     return 0;
 }
